@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cc7hlvi1f4700"]
+
+[ext_resource type="Script" uid="uid://c6rmnj7kn7jdu" path="res://Character_Sprites/win.gd" id="1_n5i2q"]
+[ext_resource type="Texture2D" uid="uid://c8yd6odtfhmtn" path="res://Main_Menu/MainMenu.png" id="2_3rjag"]
+[ext_resource type="FontFile" uid="uid://bcykb5t2rbsxx" path="res://Fonts/KaushanScript-Regular.ttf" id="3_w42f2"]
+
+[node name="win" type="Control" unique_id=2047151484]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n5i2q")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2134927984]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3rjag")
+
+[node name="Label" type="Label" parent="." unique_id=1053269795]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -130.0
+offset_right = 76.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9647059, 0.8392157, 0.7411765, 1)
+theme_override_fonts/font = ExtResource("3_w42f2")
+theme_override_font_sizes/font_size = 55
+text = "You Win"

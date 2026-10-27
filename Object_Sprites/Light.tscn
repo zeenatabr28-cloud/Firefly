@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://f0u06s03nv0n"]
+
+[ext_resource type="Texture2D" uid="uid://i7s25p14kf4v" path="res://Object_Sprites/Torches_Unlit.png" id="1_280og"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmyub"]
+atlas = ExtResource("1_280og")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eygid"]
+atlas = ExtResource("1_280og")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0tom"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmyub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eygid")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_280og"]
+colors = PackedColorArray(0.9647059, 0.8392157, 0.7411765, 0.59607846, 1, 1, 1, 0.011764706)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d0tom"]
+gradient = SubResource("Gradient_280og")
+fill = 1
+fill_from = Vector2(0.4670139, 0.5225694)
+fill_to = Vector2(0.890625, 0.14409722)
+
+[node name="Torch" type="AnimatedSprite2D" unique_id=1984465884]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_d0tom")
+frame_progress = 0.9783058
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=5450192]
+texture = SubResource("GradientTexture2D_d0tom")

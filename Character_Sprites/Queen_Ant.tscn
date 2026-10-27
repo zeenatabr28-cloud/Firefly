@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bofmkwdek0n7y"]
+
+[ext_resource type="Script" uid="uid://cq6klxnu64jke" path="res://Character_Sprites/queen_ant.gd" id="1_4qert"]
+[ext_resource type="Texture2D" uid="uid://cd523jd2t4l2o" path="res://Character_Sprites/Queen_Ant.png" id="2_nditi"]
+[ext_resource type="Script" uid="uid://b1xalbyyhjw6m" path="res://Character_Sprites/Win_scenarion.gd" id="3_nditi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s3cl"]
+atlas = ExtResource("2_nditi")
+region = Rect2(0, 0, 128, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjj8l"]
+atlas = ExtResource("2_nditi")
+region = Rect2(128, 0, 128, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0tom"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s3cl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjj8l")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d0tom"]
+radius = 111.8034
+
+[node name="Queen Ant" type="CharacterBody2D" unique_id=192495942]
+script = ExtResource("1_4qert")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2146410543]
+sprite_frames = SubResource("SpriteFrames_d0tom")
+frame = 1
+frame_progress = 0.09991689
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=56193187]
+polygon = PackedVector2Array(-21, -2, -38, 6, -40, 15, -36, 21, -30, 28, -23, 31, -10, 32, 6, 28, 12, 29, 15, 32, 27, 30, 30, 36, 33, 37, 38, 36, 42, 33, 39, 29, 38, 22, 37, 15, 37, 7, 34, 1, 26, -7, 16, -7, 8, -7, 0, -7, -5, -3, -7, -6, -14, -14, -24, -21, -28, -23, -34, -29, -45, -21, -43, -16, -31, -19, -27, -10)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1558106824]
+script = ExtResource("3_nditi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=455877205]
+shape = SubResource("CircleShape2D_d0tom")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

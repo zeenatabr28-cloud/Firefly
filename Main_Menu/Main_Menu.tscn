@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://4aa7ugiudh87"]
+
+[ext_resource type="Texture2D" uid="uid://c8yd6odtfhmtn" path="res://Main_Menu/MainMenu.png" id="1_hkybe"]
+[ext_resource type="Script" uid="uid://qx2whonk7lcp" path="res://Main_Menu/main_menu.gd" id="1_nrxv3"]
+[ext_resource type="FontFile" uid="uid://bcykb5t2rbsxx" path="res://Fonts/KaushanScript-Regular.ttf" id="2_nrxv3"]
+[ext_resource type="FontFile" uid="uid://b2s73bkxsa5wb" path="res://Fonts/Tangerine-Bold.ttf" id="3_i7rp1"]
+[ext_resource type="AudioStream" uid="uid://cb6e11w38w2l1" path="res://Audio/sonican-lullaby-wholesome-music-loop-508980.mp3" id="5_i7rp1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d0tom"]
+
+[node name="Control" type="Control" unique_id=332367901]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nrxv3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1483756321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hkybe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect" unique_id=1342791993]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+
+[node name="Label" type="Label" parent="TextureRect/VBoxContainer" unique_id=1535984373]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.9647059, 0.8392157, 0.7411765, 1)
+theme_override_colors/font_shadow_color = Color(0.5058824, 0.38431373, 0.44313726, 1)
+theme_override_colors/font_outline_color = Color(0.6, 0.45882353, 0.46666667, 1)
+theme_override_constants/shadow_offset_x = -8
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_nrxv3")
+theme_override_font_sizes/font_size = 70
+text = "Fire Ant"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Seperator" type="Control" parent="TextureRect/VBoxContainer" unique_id=2101890079]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="TextureRect/VBoxContainer" unique_id=291572636]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.30588236, 0.28627452, 0.37254903, 1)
+theme_override_colors/font_outline_color = Color(0.9647059, 0.8392157, 0.7411765, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_i7rp1")
+theme_override_font_sizes/font_size = 67
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d0tom")
+text = "Start"
+icon_alignment = 1
+
+[node name="Exit" type="Button" parent="TextureRect/VBoxContainer" unique_id=1884001971]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.30588236, 0.28627452, 0.37254903, 1)
+theme_override_colors/font_outline_color = Color(0.9647059, 0.8392157, 0.7411765, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_i7rp1")
+theme_override_font_sizes/font_size = 67
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d0tom")
+text = "Exit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1863796626]
+stream = ExtResource("5_i7rp1")
+autoplay = true
+parameters/looping = true
